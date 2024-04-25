@@ -20,7 +20,12 @@ const config = {
 };
 
 // 3. extend the theme
-const theme = extendTheme({ config, styles });
+const theme = extendTheme({
+  fonts: {
+    heading: `'Estedad', sans-serif`,
+    body: `'Estedad', sans-serif`,
+  },
+});
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
