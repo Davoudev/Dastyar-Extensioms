@@ -9,10 +9,10 @@ const BgLayout = (props) => {
       left={0}
       top={0}
       overflow={"hidden"}
-      bgImage={"/honey.jpg"}
-      bgSize={"cover"}
-      bgRepeat={"no-repeat"}
-      paddingInline={64}
+      // bgImage={"/honey.jpg"}
+      // bgSize={"cover"}
+      // bgRepeat={"no-repeat"}
+      bgColor={"#121212	"}
       zIndex={-10}
     >
       {props.children}

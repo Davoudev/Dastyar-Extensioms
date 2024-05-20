@@ -7,8 +7,10 @@ const GridHadleing = (props) => {
       templateColumns="repeat(12, 1fr)"
       templateRows="repeat(5, 1fr)"
       gap={4}
-      h={"100%"}
-      w={"100%"}
+      h={"100vh"}
+      w={"100%vw"}
+      maxW={"1560px"}
+      mx={"auto"}
     >
       {props.children}
     </Grid>

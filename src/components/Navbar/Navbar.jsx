@@ -9,13 +9,19 @@ import { Box, Flex, GridItem, Text } from "@chakra-ui/react";
 const Navbar = () => {
   return (
     <GridItem colSpan={12} rowSpan={1}>
-      <Flex justifyContent={"space-between"} alignItems={"center"} my={4}>
+      <Flex
+        justifyContent={"space-between"}
+        alignItems={"center"}
+        my={4}
+        mx={"auto"}
+        maxW={"1560px"}
+      >
         <Flex gap={4} fontSize={40} color={"gray.400"}>
           <Box
             padding={1}
             borderRadius={"80%"}
             overflow={"hidden"}
-            _hover={{ bg: "hsla(0,0%,100%,.7)", cursor: "pointer" }}
+            _hover={{ bg: "hsla(0,0%,50%,.7)", cursor: "pointer" }}
           >
             <RiSettings3Fill />
           </Box>
@@ -23,10 +29,7 @@ const Navbar = () => {
             padding={1}
             borderRadius={"80%"}
             overflow={"hidden"}
-            _hover={{
-              bg: "hsla(0,0%,100%,.7)",
-              cursor: "pointer",
-            }}
+            _hover={{ bg: "hsla(0,0%,50%,.7)", cursor: "pointer" }}
           >
             <BsFillPersonFill />
           </Box>
