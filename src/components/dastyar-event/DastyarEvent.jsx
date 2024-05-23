@@ -4,11 +4,11 @@ import React from "react";
 const DastyarEvent = () => {
   return (
     <Flex alignContent={"space-between"}>
-      <video autoplay loop>
+      <video loop autoPlay __idm_id__="1466369">
         <source
           src="https://liara-s3.dastyar.io/astin-dsDLypxc21x7.webm"
           type="video/webm"
-        ></source>
+        />
       </video>
       <Box>this is a test text</Box>
     </Flex>
