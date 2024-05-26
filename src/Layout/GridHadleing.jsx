@@ -8,7 +8,7 @@ const GridHadleing = (props) => {
       templateRows="repeat(5, 1fr)"
       gap={4}
       h={"100vh"}
-      w={"100%vw"}
+      w={"100vw"}
       maxW={"1560px"}
       mx={"auto"}
     >
