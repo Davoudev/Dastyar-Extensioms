@@ -18,10 +18,10 @@ const Todo = ({ gridNumber }) => {
   return (
     <GridItem
       colSpan={3}
-      rowSpan={4}
+      rowSpan={12}
       w={"100%"}
       h={"100%"}
-      bg={"rgb(19 ,21 ,28)"}
+      bg={"#13151C"}
       borderRadius={25}
     >
       <Flex

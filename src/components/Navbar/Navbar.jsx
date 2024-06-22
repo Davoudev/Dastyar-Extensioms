@@ -84,16 +84,16 @@ const Navbar = () => {
               viewBox="0 0 30 30"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              class="bg-blue-3f rounded-xl md:rounded shrink-0"
+              className="bg-blue-3f rounded-xl md:rounded shrink-0"
               size="32"
             >
               <path
-                fill-rule="evenodd"
-                clip-rule="evenodd"
+                fillRule="evenodd"
+                clipRule="evenodd"
                 d="M9.18663 16.5307C8.27257 14.044 7.27188 13.1998 6.18455 13.998C4.25083 15.4175 6.08701 24.9233 15.0443 24.9233C26.3628 24.9233 25.9212 11.1497 22.803 11.1497C21.7011 11.1497 20.9844 12.6813 20.6528 15.7444C21.3253 11.0409 20.8972 8.68921 19.3686 8.68921C18.0337 8.68921 17.2721 11.0409 17.0839 15.7444C17.32 9.61759 16.6402 6.5542 15.0443 6.5542C13.4485 6.5542 12.83 9.61759 13.1887 15.7444C12.8321 10.6013 12.0384 8.0297 10.8076 8.0297C9.09401 8.0297 8.55368 10.8634 9.18663 16.5307Z"
                 stroke="white"
-                stroke-width="1.35021"
-                stroke-linejoin="round"
+                strokeWidth="1.35021"
+                strokeLinejoin="round"
               ></path>
             </svg>
           </Box>

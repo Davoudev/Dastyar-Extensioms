@@ -6,7 +6,7 @@ import DastyarEvent from "../components/dastyar-event/DastyarEvent";
 const DateAndWeather = ({ gridNumber }) => {
   return (
     <GridItem
-      rowSpan={2}
+      rowSpan={5}
       colSpan={3}
       w={"100%"}
       h={"100%"}
@@ -69,14 +69,15 @@ const DateAndWeather = ({ gridNumber }) => {
               </Flex>
             </Flex>
             <Button
+              h={8}
               bg={"inherit"}
-              border={"1px solid #eef0f512"}
+              border={"1px solid #3D404D"}
               borderRadius={20}
               color={"#747785"}
               fontSize={12}
               padding={0}
-              px={2}
-              _hover={{ border: "1px solid #eef0f512" }}
+              px={3}
+              _hover={{ border: "1px solid #3D404D" }}
               _focus={{ outline: "none" }}
             >
               <IoIosArrowDown />
@@ -112,21 +113,17 @@ const DateAndWeather = ({ gridNumber }) => {
               <Text fontSize={12}>2024/May/10</Text>|
               <Text fontSize={12}>۱/ذی/۱۴۴۵</Text>
             </Flex>
-            <Flex
-              justifyContent={"center"}
-              alignItems={"center"}
-              my={2}
-              mx={"auto"}
-            >
+            <Flex justifyContent={"center"} alignItems={"center"} gap={2}>
               <Button
                 bg={"inherit"}
-                border={"1px solid #eef0f512"}
+                border={"1px solid #3D404D"}
                 borderRadius={20}
                 color={"#747785"}
                 fontSize={12}
                 padding={0}
                 px={2}
-                _hover={{ border: "1px solid #eef0f512" }}
+                h={8}
+                _hover={{ border: "1px solid #3D404D" }}
                 _focus={{ outline: "none" }}
               >
                 <IoIosArrowDown />
@@ -134,12 +131,12 @@ const DateAndWeather = ({ gridNumber }) => {
               </Button>
               <Button
                 bg={"inherit"}
-                border={"1px solid #eef0f512"}
+                border={"1px solid #3D404D"}
                 borderRadius={18}
                 color={"#747785"}
                 fontSize={12}
-                mx={2}
-                _hover={{ border: "1px solid #eef0f512" }}
+                h={8}
+                _hover={{ border: "1px solid #3D404D" }}
                 _focus={{ outline: "none" }}
               >
                 <IoIosArrowDown />

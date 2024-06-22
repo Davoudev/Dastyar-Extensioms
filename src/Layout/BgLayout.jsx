@@ -12,7 +12,7 @@ const BgLayout = (props) => {
       // bgImage={"/honey.jpg"}
       // bgSize={"cover"}
       // bgRepeat={"no-repeat"}
-      bgColor={"#121212	"}
+      bgColor={"#1F1F1F	"}
       zIndex={-10}
     >
       {props.children}

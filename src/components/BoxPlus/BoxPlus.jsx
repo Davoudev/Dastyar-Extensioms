@@ -1,11 +1,23 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
 
-const BoxPlus = () => {
+const BoxPlus = (props) => {
   return (
-    <Box bg={"#eef0f512"} gap={2} borderRadius={8}>
-      +
-    </Box>
+    <Flex
+      bg={"#1A1D26"}
+      borderRadius={8}
+      justifyContent={"center"}
+      alignItems={"center"}
+      color={"#BABDC6"}
+      flexDir={"column"}
+    >
+      <Box fontWeight={"bold"} fontSize={50}>
+        {props.icon}
+      </Box>
+      <Box fontWeight={"bold"} fontSize={18}>
+        {props.text}
+      </Box>
+    </Flex>
   );
 };
 
