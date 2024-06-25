@@ -3,8 +3,6 @@ import React, { useEffect, useState } from "react";
 import Days from "../components/calender/days";
 
 const Calender = ({ gridNumber }) => {
-  // const jalaliNow = moment("1367/11/04", "jYYYY/jMM/jDD");
-
   const months = [
     "فروردین",
     "اردیبهشت",

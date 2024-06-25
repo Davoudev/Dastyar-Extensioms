@@ -23,9 +23,10 @@ const Days = (props) => {
         w={"100%"}
         dir="rtl"
       >
-        {numbers.map((number) => {
+        {numbers.map((number, index) => {
           return (
             <GridItem
+              key={index}
               w={9}
               h={9}
               gap={1}

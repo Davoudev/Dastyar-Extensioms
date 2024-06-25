@@ -1,9 +1,67 @@
 import { Box, Button, Flex, GridItem, Heading, Text } from "@chakra-ui/react";
 import { IoIosArrowDown } from "react-icons/io";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import DastyarEvent from "../components/dastyar-event/DastyarEvent";
 
 const DateAndWeather = ({ gridNumber }) => {
+  const [clock, setClock] = useState({
+    hour: null,
+    minute: null,
+    secound: null,
+  });
+  const [date, setDate] = useState({
+    day: null,
+    month: null,
+    weekday: null,
+  });
+  const [outsideCalender, setOutsideCalender] = useState({
+    ghamari: null,
+    gregorian: null,
+  });
+
+  const [timer, setTimer] = useState({ hour: 0, min: 25, secound: 0 });
+  // به secound وابستش کنیم که هر بار request ارسال بشه یا اینکه
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://api.keybit.ir/time/");
+        if (response.ok) {
+          const result = await response.json();
+          console.log(result);
+          setClock({
+            hour:
+              result.time24.hour.en < 11
+                ? "0" + Number(result.time24.hour.en - 1)
+                : Number(result.time24.hour.en) - 1,
+            minute: result.time24.minute.en,
+            secound: result.time24.second.en,
+          });
+          setDate({
+            day:
+              result.date.day.number.fa.charAt(0) == "۰"
+                ? result.date.day.number.fa.replace("۰", "")
+                : result.date.day.number.fa,
+            month: result.date.month.name,
+            weekday: result.date.weekday.name,
+          });
+          setOutsideCalender({
+            ghamari: result.date.other.ghamari.usual.fa,
+            gregorian: result.date.other.gregorian.usual.en,
+          });
+        } else {
+          console.error("Error fetching data:", response.status);
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    const intervalId = setInterval(fetchData, 1000);
+
+    return () => clearInterval(intervalId);
+  });
+  // better show for date wuth delete fucking zero
+
   return (
     <GridItem
       rowSpan={5}
@@ -98,11 +156,11 @@ const DateAndWeather = ({ gridNumber }) => {
               fontWeight={"bold"}
               textAlign={"center"}
             >
-              ۱۱:۲۹
+              {`${clock.hour} : ${clock.minute}`}
             </Heading>
 
             <Text fontWeight={"bold"} my={3} fontSize={19}>
-              جمعه ، ۱۴ اردیبهشت
+              {`${date.weekday} ، ${date.day} ${date.month} `}
             </Text>
             <Flex
               justifyContent={"space-between"}
@@ -110,8 +168,8 @@ const DateAndWeather = ({ gridNumber }) => {
               gap={2}
               color={"#747785"}
             >
-              <Text fontSize={12}>2024/May/10</Text>|
-              <Text fontSize={12}>۱/ذی/۱۴۴۵</Text>
+              <Text fontSize={12}>{outsideCalender.gregorian}</Text>|
+              <Text fontSize={12}>{outsideCalender.ghamari}</Text>
             </Flex>
             <Flex justifyContent={"center"} alignItems={"center"} gap={2}>
               <Button
