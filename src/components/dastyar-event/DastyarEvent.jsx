@@ -1,7 +1,10 @@
 import { Box, Flex } from "@chakra-ui/react";
 import React from "react";
 
-const DastyarEvent = () => {
+const DastyarEvent = (props) => {
+  const local = props.local ? props.local : "";
+  const global = props.global ? props.global : "";
+
   return (
     <Flex alignContent={"space-between"}>
       <video loop autoPlay __idm_id__="1466369">
@@ -10,7 +13,10 @@ const DastyarEvent = () => {
           type="video/webm"
         />
       </video>
-      <Box>this is a test text</Box>
+      <Box color={`${props.holiday ? `#E8E5EF` : `#DE4538`}`}>
+        {local}
+        {global}
+      </Box>
     </Flex>
   );
 };

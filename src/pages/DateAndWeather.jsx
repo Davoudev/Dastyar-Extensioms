@@ -18,6 +18,11 @@ const DateAndWeather = ({ gridNumber }) => {
     ghamari: null,
     gregorian: null,
   });
+  const [relation, setRelation] = useState({
+    text1: null,
+    text2: null,
+    holiday: false,
+  });
 
   const [timer, setTimer] = useState({ hour: 0, min: 25, secound: 0 });
   // به secound وابستش کنیم که هر بار request ارسال بشه یا اینکه
@@ -47,6 +52,11 @@ const DateAndWeather = ({ gridNumber }) => {
           setOutsideCalender({
             ghamari: result.date.other.ghamari.usual.fa,
             gregorian: result.date.other.gregorian.usual.en,
+          });
+          setRelation({
+            text1: result.date.day.events.global,
+            text2: result.date.day.events.local,
+            holiday: result.date.day.events.holy,
           });
         } else {
           console.error("Error fetching data:", response.status);
@@ -204,7 +214,11 @@ const DateAndWeather = ({ gridNumber }) => {
           </Flex>
         </Flex>
         <Flex flex={1} h={"50%"}>
-          <DastyarEvent />
+          <DastyarEvent
+            global={relation.text1}
+            local={relation.text2}
+            holiday={relation.holiday}
+          />
         </Flex>
       </Flex>
     </GridItem>
