@@ -1,9 +1,14 @@
-import { Box, Button, Flex, GridItem, Heading, Text } from "@chakra-ui/react";
-import { IoIosArrowDown } from "react-icons/io";
+import { Flex, GridItem } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
 import DastyarEvent from "../components/dastyar-event/DastyarEvent";
+import Weather from "../components/weather/Weather";
+import Clock from "../components/clock/Clock";
+import Timer from "../components/Timer/Timer";
+import OghatSharei from "../components/oghatSharie/OghatSharei";
+import PishBini from "../components/weather/PishBini";
 
-const DateAndWeather = ({ gridNumber }) => {
+const DateAndWeather = () => {
+  // states
   const [clock, setClock] = useState({
     hour: null,
     minute: null,
@@ -23,9 +28,15 @@ const DateAndWeather = ({ gridNumber }) => {
     text2: null,
     holiday: false,
   });
-
+  const [showDown, setShowDown] = useState({
+    dastEvents: true,
+    timer: false,
+    oghatsharye: false,
+    pishbini: false,
+  });
   const [timer, setTimer] = useState({ hour: 0, min: 25, secound: 0 });
-  // به secound وابستش کنیم که هر بار request ارسال بشه یا اینکه
+
+  // request for Api
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -55,8 +66,8 @@ const DateAndWeather = ({ gridNumber }) => {
           });
           setRelation({
             text1: result.date.day.events.global,
-            text2: result.date.day.events.local,
-            holiday: result.date.day.events.holy,
+            text2: result.date.day.events.local.text,
+            holiday: result.date.day.events.local.holiday,
           });
         } else {
           console.error("Error fetching data:", response.status);
@@ -66,12 +77,36 @@ const DateAndWeather = ({ gridNumber }) => {
       }
     };
 
+    // repeat request
     const intervalId = setInterval(fetchData, 1000);
 
     return () => clearInterval(intervalId);
   });
-  // better show for date wuth delete fucking zero
-
+  // toggles for showing  components for timer oghat sharye and pishbini
+  const showTimerHandler = () => {
+    setShowDown((prevstate) => ({
+      dastEvents: !prevstate.timer ? false : !prevstate.dastEvents,
+      timer: !prevstate.timer,
+      oghatsharye: false,
+      pishbini: false,
+    }));
+  };
+  const showOghatHandler = () => {
+    setShowDown((prevstate) => ({
+      dastEvents: !prevstate.oghatsharye ? false : !prevstate.dastEvents,
+      timer: false,
+      oghatsharye: !prevstate.oghatsharye,
+      pishbini: false,
+    }));
+  };
+  const showPishbiniHandler = () => {
+    setShowDown((prevstate) => ({
+      dastEvents: !prevstate.pishbini ? false : !prevstate.dastEvents,
+      timer: false,
+      oghatsharye: false,
+      pishbini: !prevstate.pishbini,
+    }));
+  };
   return (
     <GridItem
       rowSpan={5}
@@ -89,136 +124,34 @@ const DateAndWeather = ({ gridNumber }) => {
           maxW={"100%"}
           h={"50%"}
         >
-          <Flex
-            flex={1}
-            direction={"column"}
-            paddingY={4}
-            paddingX={3}
-            justifyContent={"space-around"}
-            alignItems={"center"}
-            borderRight={"1px solid #eef0f512"}
-            w={"50%"}
-          >
-            <Heading mx={"auto"}>
-              <Flex>
-                <Box>🌱</Box>
-                <Box>۵۰°</Box>
-              </Flex>
-            </Heading>
-
-            <Flex justifyContent={"center"} alignItems={"center"}>
-              <Text fontSize={19} fontWeight={"bold"}>
-                🍓
-              </Text>
-              <Text fontSize={19} fontWeight={"bold"}>
-                جهنمه
-              </Text>
-            </Flex>
-            <Flex
-              justifyContent={"center"}
-              alignItems={"center"}
-              w={"100%"}
-              fontSize={13}
-              gap={2}
-              color={"#747785"}
-              mt={4}
-            >
-              <Flex>
-                <Text>حداقل</Text>
-                <Text color={"gray.400"} fontWeight={"bold"} ml={2}>
-                  ۳۵°
-                </Text>
-              </Flex>
-              <Flex>
-                <Text> حداکثر</Text>
-                <Text color={"gray.400"} fontWeight={"bold"} ml={2}>
-                  ۵۰°
-                </Text>
-              </Flex>
-            </Flex>
-            <Button
-              h={8}
-              bg={"inherit"}
-              border={"1px solid #3D404D"}
-              borderRadius={20}
-              color={"#747785"}
-              fontSize={12}
-              padding={0}
-              px={3}
-              _hover={{ border: "1px solid #3D404D" }}
-              _focus={{ outline: "none" }}
-            >
-              <IoIosArrowDown />
-              پیش بینی
-            </Button>
-          </Flex>
-          <Flex
-            flex={1}
-            direction={"column"}
-            padding={3}
-            justifyContent={"space-around"}
-            alignItems={"center"}
-            w={"50%"}
-          >
-            <Heading
-              color={"blue.500"}
-              w={"100%"}
-              fontWeight={"bold"}
-              textAlign={"center"}
-            >
-              {`${clock.hour} : ${clock.minute}`}
-            </Heading>
-
-            <Text fontWeight={"bold"} my={3} fontSize={19}>
-              {`${date.weekday} ، ${date.day} ${date.month} `}
-            </Text>
-            <Flex
-              justifyContent={"space-between"}
-              alignItems={"center"}
-              gap={2}
-              color={"#747785"}
-            >
-              <Text fontSize={12}>{outsideCalender.gregorian}</Text>|
-              <Text fontSize={12}>{outsideCalender.ghamari}</Text>
-            </Flex>
-            <Flex justifyContent={"center"} alignItems={"center"} gap={2}>
-              <Button
-                bg={"inherit"}
-                border={"1px solid #3D404D"}
-                borderRadius={20}
-                color={"#747785"}
-                fontSize={12}
-                padding={0}
-                px={2}
-                h={8}
-                _hover={{ border: "1px solid #3D404D" }}
-                _focus={{ outline: "none" }}
-              >
-                <IoIosArrowDown />
-                <Box ml={1}> اوقات شرعی</Box>
-              </Button>
-              <Button
-                bg={"inherit"}
-                border={"1px solid #3D404D"}
-                borderRadius={18}
-                color={"#747785"}
-                fontSize={12}
-                h={8}
-                _hover={{ border: "1px solid #3D404D" }}
-                _focus={{ outline: "none" }}
-              >
-                <IoIosArrowDown />
-                <Box ml={1}>تایمر</Box>
-              </Button>
-            </Flex>
-          </Flex>
+          <Weather
+            pishbiniClickHandler={showPishbiniHandler}
+            pishbini={showDown.pishbini}
+          />
+          <Clock
+            hour={clock.hour}
+            minute={clock.minute}
+            weekday={date.weekday}
+            day={date.day}
+            month={date.month}
+            gregorian={outsideCalender.gregorian}
+            ghamari={outsideCalender.ghamari}
+            timerClickHandler={showTimerHandler}
+            oghatClickHandler={showOghatHandler}
+            timer={showDown.timer}
+            oghat={showDown.oghatsharye}
+          />
         </Flex>
         <Flex flex={1} h={"50%"}>
           <DastyarEvent
+            show={showDown.dastEvents}
             global={relation.text1}
             local={relation.text2}
             holiday={relation.holiday}
           />
+          <Timer show={showDown.timer} />
+          <OghatSharei show={showDown.oghatsharye} />
+          <PishBini show={showDown.pishbini} />
         </Flex>
       </Flex>
     </GridItem>
