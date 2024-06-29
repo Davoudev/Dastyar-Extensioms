@@ -1,9 +1,33 @@
 import { Box, Button, Flex, Heading, Text } from "@chakra-ui/react";
 import { IoIosArrowDown } from "react-icons/io";
 import { IoIosArrowUp } from "react-icons/io";
-import React from "react";
+import React, { useEffect, useState } from "react";
 
 const Weather = ({ pishbiniClickHandler, pishbini }) => {
+  const [temp, setTemp] = useState({
+    temp: null,
+    maxTemp: null,
+    minTemp: null,
+  });
+
+  const APIKey = "c42c5f0c9b3b2fd8095f2882a3da19d4";
+  const city = "ahvaz";
+
+  // it's will run for one time
+  useEffect(() => {
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`
+    )
+      .then((response) => response.json())
+      .then((json) => {
+        setTemp({
+          temp: json.main.temp,
+          maxTemp: json.main.temp_max,
+          minTemp: json.main.temp_min,
+        });
+      });
+  }, []);
+
   return (
     <Flex
       flex={1}
@@ -18,7 +42,7 @@ const Weather = ({ pishbiniClickHandler, pishbini }) => {
       <Heading mx={"auto"}>
         <Flex>
           <Box>🌱</Box>
-          <Box>۵۰°</Box>
+          <Box>{temp.temp}°</Box>
         </Flex>
       </Heading>
 
@@ -42,13 +66,13 @@ const Weather = ({ pishbiniClickHandler, pishbini }) => {
         <Flex>
           <Text>حداقل</Text>
           <Text color={"gray.400"} fontWeight={"bold"} ml={2}>
-            ۳۵°
+            {temp.minTemp}°
           </Text>
         </Flex>
         <Flex>
           <Text> حداکثر</Text>
           <Text color={"gray.400"} fontWeight={"bold"} ml={2}>
-            ۵۰°
+            {temp.maxTemp}°
           </Text>
         </Flex>
       </Flex>

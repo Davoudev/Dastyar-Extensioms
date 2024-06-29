@@ -66,8 +66,12 @@ const DateAndWeather = () => {
           });
           setRelation({
             text1: result.date.day.events.global,
-            text2: result.date.day.events.local.text,
-            holiday: result.date.day.events.local.holiday,
+            text2: result.date.day.events.local
+              ? result.date.day.events.local.text
+              : null,
+            holiday: result.date.day.events.local
+              ? result.date.day.events.local.holiday
+              : null,
           });
         } else {
           console.error("Error fetching data:", response.status);
