@@ -1,13 +1,23 @@
 import { Flex, Grid, GridItem } from "@chakra-ui/react";
-import React from "react";
+import React, { useState } from "react";
 import { FaPlus } from "react-icons/fa6";
 import BoxPlus from "../BoxPlus/BoxPlus";
 import { PiDotsNineBold } from "react-icons/pi";
 
 const BookMark = () => {
+  const [activeIndex, setActiveIndex] = useState(null);
+
+  const handleBoxPlusClick = (index) => {
+    setActiveIndex(index);
+  };
   // Create an array with the desired number of BoxPlus components
   const boxPlusComponents = Array.from({ length: 11 }, (_, index) => (
-    <BoxPlus key={index} icon={<FaPlus fontSize={40} />} />
+    <BoxPlus
+      key={index}
+      icon={<FaPlus fontSize={40} />}
+      isActive={index === activeIndex}
+      onClick={() => handleBoxPlusClick(index)}
+    />
   ));
   const x = <BoxPlus icon={<PiDotsNineBold />} text={"دم دستی"} />;
 

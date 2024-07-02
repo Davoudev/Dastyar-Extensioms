@@ -42,7 +42,7 @@ const Weather = ({ pishbiniClickHandler, pishbini }) => {
       <Heading mx={"auto"}>
         <Flex>
           <Box>🌱</Box>
-          <Box>{temp.temp}°</Box>
+          <Box>{Math.floor(temp.temp)}°</Box>
         </Flex>
       </Heading>
 

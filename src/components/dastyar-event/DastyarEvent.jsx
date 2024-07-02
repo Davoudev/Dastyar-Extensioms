@@ -7,7 +7,11 @@ const DastyarEvent = ({ local, global, holiday, show }) => {
   const global_ = global ? global : "";
 
   return (
-    <Flex alignContent={"space-between"} display={show ? "flex" : "none"}>
+    <Flex
+      alignContent={"space-between"}
+      justifyContent={"space-around"}
+      display={show ? "flex" : "none"}
+    >
       <video loop autoPlay __idm_id__="1466369">
         <source
           src="https://liara-s3.dastyar.io/astin-dsDLypxc21x7.webm"
