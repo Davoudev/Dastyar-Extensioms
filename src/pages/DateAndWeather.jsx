@@ -1,28 +1,13 @@
 import { Flex, GridItem } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import DastyarEvent from "../components/dastyar-event/DastyarEvent";
 import Weather from "../components/weather/Weather";
-import Clock from "../components/clock/Clock";
+import DateTime from "../components/DateTime";
 import Timer from "../components/Timer/Timer";
 import OghatSharei from "../components/oghatSharie/OghatSharei";
 import PishBini from "../components/weather/PishBini";
 
 const DateAndWeather = () => {
-  // states
-  const [clock, setClock] = useState({
-    hour: null,
-    minute: null,
-    secound: null,
-  });
-  const [date, setDate] = useState({
-    day: null,
-    month: null,
-    weekday: null,
-  });
-  const [outsideCalender, setOutsideCalender] = useState({
-    ghamari: null,
-    gregorian: null,
-  });
   const [relation, setRelation] = useState({
     text1: null,
     text2: null,
@@ -34,7 +19,6 @@ const DateAndWeather = () => {
     oghatsharye: false,
     pishbini: false,
   });
-  const [timer, setTimer] = useState({ hour: 0, min: 25, secound: 0 });
 
   // request for Api
   useEffect(() => {
@@ -43,27 +27,6 @@ const DateAndWeather = () => {
         const response = await fetch("https://api.keybit.ir/time/");
         if (response.ok) {
           const result = await response.json();
-          console.log(result);
-          setClock({
-            hour:
-              result.time24.hour.en < 11
-                ? "0" + Number(result.time24.hour.en - 1)
-                : Number(result.time24.hour.en) - 1,
-            minute: result.time24.minute.en,
-            secound: result.time24.second.en,
-          });
-          setDate({
-            day:
-              result.date.day.number.fa.charAt(0) == "۰"
-                ? result.date.day.number.fa.replace("۰", "")
-                : result.date.day.number.fa,
-            month: result.date.month.name,
-            weekday: result.date.weekday.name,
-          });
-          setOutsideCalender({
-            ghamari: result.date.other.ghamari.usual.fa,
-            gregorian: result.date.other.gregorian.usual.en,
-          });
           setRelation({
             text1: result.date.day.events.global,
             text2: result.date.day.events.local
@@ -132,14 +95,7 @@ const DateAndWeather = () => {
             pishbiniClickHandler={showPishbiniHandler}
             pishbini={showDown.pishbini}
           />
-          <Clock
-            hour={clock.hour}
-            minute={clock.minute}
-            weekday={date.weekday}
-            day={date.day}
-            month={date.month}
-            gregorian={outsideCalender.gregorian}
-            ghamari={outsideCalender.ghamari}
+          <DateTime
             timerClickHandler={showTimerHandler}
             oghatClickHandler={showOghatHandler}
             timer={showDown.timer}
