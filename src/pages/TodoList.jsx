@@ -13,12 +13,13 @@ import {
 import { IoMdEyeOff } from "react-icons/io";
 import { LuPlus } from "react-icons/lu";
 import React from "react";
+import Todo from "../components/Todo-list/Todo";
 
-const Todo = ({ gridNumber }) => {
+const TodoList = ({ gridNumber }) => {
   return (
     <GridItem
       colSpan={3}
-      rowSpan={14}
+      rowSpan={12}
       w={"100%"}
       h={"100%"}
       bg={"#13151C"}
@@ -41,24 +42,7 @@ const Todo = ({ gridNumber }) => {
         </Flex>
         {/*  */}
         <Box w={"100%"} bg={"#eef0f512"} h={0.1} my={4}></Box>
-        <Flex
-          marginX={4}
-          borderRadius={14}
-          border={"1px solid"}
-          borderColor={"gray.600"}
-          direction={"row-reverse"}
-          padding={4}
-          bg={"#eef0f512"}
-        >
-          <Checkbox
-            size="lg"
-            colorScheme="green"
-            flexDirection={"row-reverse"}
-            gap={2}
-          >
-            Test
-          </Checkbox>
-        </Flex>
+        <Todo />
         <Flex
           paddingX={4}
           mt={"auto"}
@@ -91,7 +75,7 @@ const Todo = ({ gridNumber }) => {
   );
 };
 
-export default Todo;
+export default TodoList;
 
 {
   /* <UnorderedList>

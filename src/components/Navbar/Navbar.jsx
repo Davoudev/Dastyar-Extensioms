@@ -14,7 +14,7 @@ const Navbar = () => {
         alignItems={"center"}
         my={4}
         mx={"auto"}
-        maxW={"1560px"}
+        maxW={"1400px"}
       >
         <Flex gap={4} fontSize={40} color={"gray.400"}>
           <Box

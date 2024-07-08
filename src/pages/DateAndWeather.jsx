@@ -113,7 +113,7 @@ const DateAndWeather = () => {
   };
   return (
     <GridItem
-      rowSpan={5}
+      rowSpan={6}
       colSpan={3}
       w={"100%"}
       h={"100%"}

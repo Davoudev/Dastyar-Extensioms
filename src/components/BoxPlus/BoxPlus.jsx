@@ -7,7 +7,15 @@ import { useBoolean } from "@chakra-ui/react";
 const BoxPlus = ({ icon, text, isActive, onClick }) => {
   const [show, setShow] = useBoolean(!isActive);
   return (
-    <Flex bg={"#1A1D26"} borderRadius={8} color={"#BABDC6"} p={3}>
+    <Flex
+      bg={"#1A1D26"}
+      borderRadius={8}
+      color={"#BABDC6"}
+      p={0}
+      m={0}
+      overflow={"hidden"}
+      w={"100%"}
+    >
       {/* first show */}
       <Flex
         display={!isActive ? "flex" : "none"}
@@ -32,9 +40,10 @@ const BoxPlus = ({ icon, text, isActive, onClick }) => {
       <Flex
         display={isActive ? "flex" : "none"}
         flexDir="column"
-        maxW={"100%"}
-        justifyContent="space-between"
+        w={"100%"}
+        justifyContent="center"
         alignItems="center"
+        p={2}
         onClick={() => {
           setShow.toggle();
           // Notify the parent component that this BoxPlus was clicked
@@ -48,6 +57,8 @@ const BoxPlus = ({ icon, text, isActive, onClick }) => {
           border={"none"}
           _hover={{ bg: "#2B2F3D" }}
           px={"auto"}
+          borderRadius={10}
+          mb={2}
         >
           <HStack spacing={2}>
             <Text>بوکمارک</Text>
@@ -58,6 +69,7 @@ const BoxPlus = ({ icon, text, isActive, onClick }) => {
           w={"100%"}
           bg={"#1E222B"}
           color={"#BABDC6"}
+          borderRadius={10}
           border={"none"}
           _hover={{ bg: "#2B2F3D" }}
           outline={"none"}

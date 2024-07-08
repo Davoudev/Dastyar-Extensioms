@@ -51,16 +51,16 @@ const Calender = ({ gridNumber }) => {
   console.log(showedDate);
   return (
     <GridItem
-      rowSpan={7}
+      rowSpan={8}
       colSpan={3}
       w={"100%"}
       h={"100%"}
       bg={"#13151C"}
       borderRadius={25}
     >
-      <Flex>
+      {/* <Flex>
         <Days monthNumber={Number(showedDate.monthDays)} />
-      </Flex>
+      </Flex> */}
     </GridItem>
   );
 };
