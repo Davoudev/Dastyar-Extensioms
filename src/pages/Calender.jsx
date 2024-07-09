@@ -31,7 +31,6 @@ const Calender = ({ gridNumber }) => {
         const response = await fetch("https://api.keybit.ir/time/");
         if (response.ok) {
           const result = await response.json();
-          console.log(result);
           setShowDate({
             year: result.date.year.number.en,
             monthName: result.date.month.name,
@@ -48,7 +47,7 @@ const Calender = ({ gridNumber }) => {
 
     fetchData();
   }, []);
-  console.log(showedDate);
+
   return (
     <GridItem
       rowSpan={8}
