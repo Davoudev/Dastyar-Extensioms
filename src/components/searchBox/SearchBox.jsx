@@ -12,20 +12,22 @@ import { FcGoogle } from "react-icons/fc";
 
 import React from "react";
 
-const SearchBox = () => {
+const SearchBox = ({ setShow }) => {
   return (
     <GridItem
       rowSpan={1}
-      bg={"rgb(19 ,21 ,28)"}
+      bg={"#13151C"}
       borderRadius={25}
       paddingX={8}
       paddingY={7}
+      zIndex={11}
     >
       <Flex
-        bg={"#eef0f512"}
+        bg={"#1E222B"}
         borderRadius={35}
         position={"relative"}
         padding={1}
+        pos={"relative"}
       >
         <InputGroup>
           <InputLeftElement
@@ -43,7 +45,10 @@ const SearchBox = () => {
             <SlMagnifier />
           </InputLeftElement>
           <Input
-            placeholder="جست و جو در گوگل"
+            placeholder="جستجو در گوگل"
+            _placeholder={{
+              color: "#A8ABBD",
+            }}
             variant={"unstyled"}
             borderRadius={"50px"}
             paddingRight={12}
@@ -51,7 +56,9 @@ const SearchBox = () => {
             paddingY={4}
             w={"100%"}
             textAlign="right"
+            onClick={setShow}
           />
+
           <InputRightElement
             fontSize={35}
             borderRadius={"50%"}
