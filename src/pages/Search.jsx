@@ -16,7 +16,7 @@ const Search = () => {
   return (
     <GridItem colSpan={6} rowSpan={show ? 8 : 6} w={"100%"} h={"100%"}>
       <Grid templateRows="repeat(3, 1fr)" gap={2} w={"100%"} h={"100%"}>
-        <SearchBox setShow={showHandler} />
+        <SearchBox setShow={showHandler} show={show} />
         {show ? <SuggestionTools /> : <BookMark />}
         <BackDrop show={show} toggle={toggleHandler} />
       </Grid>

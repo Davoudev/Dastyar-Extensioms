@@ -6,13 +6,14 @@ import {
   InputGroup,
   InputLeftElement,
   InputRightElement,
+  Text,
 } from "@chakra-ui/react";
 import { SlMagnifier } from "react-icons/sl";
 import { FcGoogle } from "react-icons/fc";
-
+import { AiOutlineEnter } from "react-icons/ai";
 import React from "react";
 
-const SearchBox = ({ setShow }) => {
+const SearchBox = ({ setShow, show }) => {
   return (
     <GridItem
       rowSpan={1}
@@ -35,14 +36,35 @@ const SearchBox = ({ setShow }) => {
             bg={"rgb(61, 81, 143 )"}
             borderRadius={"9999px"}
             height={"80%"}
-            w={"70px"}
+            w={show ? "110px" : "70px"}
             aspectRatio={1}
             position={"absolute"}
             left={0}
             top={"10%"}
             transform={"translateX(10%)"}
+            transition="width 0.3s ease"
           >
-            <SlMagnifier />
+            {show ? (
+              <Flex
+                fontSize={14}
+                justifyContent={"space-between"}
+                alignItems={"center"}
+                gap={2}
+              >
+                <Box
+                  bg={"#5C6DA1"}
+                  px={2}
+                  py={1}
+                  borderRadius={7}
+                  fontSize={14}
+                >
+                  <AiOutlineEnter />
+                </Box>
+                <Text>جستجو</Text>
+              </Flex>
+            ) : (
+              <SlMagnifier />
+            )}
           </InputLeftElement>
           <Input
             placeholder="جستجو در گوگل"

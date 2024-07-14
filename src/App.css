@@ -38,3 +38,6 @@
 .read-the-docs {
   color: #888;
 }
+.xx::-webkit-scrollbar {
+  width: 0;
+}
