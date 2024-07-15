@@ -72,3 +72,29 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+/*  Calender styles */
+
+.custom-calendar {
+  width: 100%;
+  height: 100%;
+  background: #13151c;
+}
+.-selected {
+  background: #0945af !important;
+}
+.Calendar__day {
+  color: #fff;
+}
+.-today {
+  background: #13151c;
+  border: 3px solid #0945af;
+  color: #fff !important;
+}
+
+.Calendar__monthArrow {
+  background-image: url("./assets/white-arrow-png-41947.png");
+}
+.Calendar__monthArrowWrapper.-right {
+  transform: rotate(-90deg);
+}
