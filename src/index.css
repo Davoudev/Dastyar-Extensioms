@@ -95,6 +95,24 @@ button:focus-visible {
 .Calendar__monthArrow {
   background-image: url("./assets/white-arrow-png-41947.png");
 }
-.Calendar__monthArrowWrapper.-right {
-  transform: rotate(-90deg);
+.-right {
+  transform: rotate(0deg) !important;
+}
+.-left {
+  transform: rotate(180deg) !important;
+}
+.Calendar__monthSelectorItem,
+.Calendar__yearSelectorText {
+  color: #fff;
+}
+.Calendar__monthSelector,
+.Calendar__yearSelector {
+  background: #13151c;
+  border-bottom-left-radius: 1em;
+  border-bottom-right-radius: 1em;
+}
+.-faded::after,
+.-faded::before {
+  opacity: 0 !important;
+  z-index: 0 !important;
 }
