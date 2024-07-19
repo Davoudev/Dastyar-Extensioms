@@ -1,10 +1,8 @@
 import {
   Box,
   Button,
-  Checkbox,
   Flex,
-  GridItem,
-  Heading,
+  FormLabel,
   Input,
   InputGroup,
   InputLeftElement,
@@ -12,20 +10,19 @@ import {
 } from "@chakra-ui/react";
 import { IoMdEyeOff } from "react-icons/io";
 import { LuPlus } from "react-icons/lu";
-import React from "react";
+import React, { useState } from "react";
 
-const Todo = ({ gridNumber }) => {
+const Todo = (props) => {
+  const [value, setValue] = useState("");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.addTodo(value);
+    setValue("");
+  };
   return (
-    <GridItem
-      colSpan={3}
-      rowSpan={14}
-      w={"100%"}
-      h={"100%"}
-      bg={"#13151C"}
-      borderRadius={25}
-    >
+    <form style={{ height: "100%" }} onSubmit={handleSubmit}>
       <Flex
-        paddingY={6}
+        py={6}
         h={"100%"}
         w={"100%"}
         direction={"column"}
@@ -37,28 +34,12 @@ const Todo = ({ gridNumber }) => {
             <IoMdEyeOff />
             <Text display={"none"}>مخفی کن</Text>
           </Button>
-          <Heading fontSize={26}>دست نویس</Heading>
+          <FormLabel fontSize={26}>دست نویس</FormLabel>
         </Flex>
         {/*  */}
         <Box w={"100%"} bg={"#eef0f512"} h={0.1} my={4}></Box>
-        <Flex
-          marginX={4}
-          borderRadius={14}
-          border={"1px solid"}
-          borderColor={"gray.600"}
-          direction={"row-reverse"}
-          padding={4}
-          bg={"#eef0f512"}
-        >
-          <Checkbox
-            size="lg"
-            colorScheme="green"
-            flexDirection={"row-reverse"}
-            gap={2}
-          >
-            Test
-          </Checkbox>
-        </Flex>
+        <Box overflow={"auto"}>{props.children}</Box>
+
         <Flex
           paddingX={4}
           mt={"auto"}
@@ -66,15 +47,17 @@ const Todo = ({ gridNumber }) => {
           justifyContent={"center"}
         >
           <InputGroup>
-            <InputLeftElement
-              pointerEvents="none"
-              color={"gray.400"}
-              h={"100%"}
-            >
-              <LuPlus />
+            <InputLeftElement h={"100%"} p={0} ml={1}>
+              <button>
+                <LuPlus />
+              </button>
             </InputLeftElement>
             <Input
               type="text"
+              dir="rtl"
+              value={value}
+              pr={4}
+              onChange={(e) => setValue(e.target.value)}
               paddingY={6}
               _focus={{ outline: "none", border: "none" }}
               placeholder="نوشتن تسک جدید"
@@ -87,7 +70,7 @@ const Todo = ({ gridNumber }) => {
           </InputGroup>
         </Flex>
       </Flex>
-    </GridItem>
+    </form>
   );
 };
 

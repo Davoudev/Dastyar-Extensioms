@@ -27,7 +27,7 @@ const DateAndWeather = () => {
         const response = await fetch("https://api.keybit.ir/time/");
         if (response.ok) {
           const result = await response.json();
-          console.log(result.date);
+          // console.log(result.date);
           setRelation({
             text1: result.date.day.events.global
               ? result.date.day.events.global.text

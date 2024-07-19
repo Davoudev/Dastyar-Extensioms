@@ -1,24 +1,28 @@
 import { Checkbox, Flex } from "@chakra-ui/react";
+import { FaRegTrashAlt } from "react-icons/fa";
+import { FaPen } from "react-icons/fa6";
+
 import React from "react";
 
-const Todo = () => {
+const Todo = ({ task }) => {
   return (
     <Flex
-      marginX={4}
+      mx={4}
+      mb={3}
       borderRadius={14}
       border={"1px solid"}
       borderColor={"gray.600"}
       direction={"row-reverse"}
-      padding={4}
+      p={3}
       bg={"#eef0f512"}
     >
       <Checkbox
         size="lg"
         colorScheme="green"
         flexDirection={"row-reverse"}
-        gap={2}
+        gap={4}
       >
-        Test
+        {task}
       </Checkbox>
     </Flex>
   );

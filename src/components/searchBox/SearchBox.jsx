@@ -23,13 +23,7 @@ const SearchBox = ({ setShow, show }) => {
       paddingY={7}
       zIndex={11}
     >
-      <Flex
-        bg={"#1E222B"}
-        borderRadius={35}
-        position={"relative"}
-        padding={1}
-        pos={"relative"}
-      >
+      <Flex bg={"#1E222B"} borderRadius={35} padding={1} pos={"relative"}>
         <InputGroup>
           <InputLeftElement
             fontSize={24}
@@ -38,7 +32,7 @@ const SearchBox = ({ setShow, show }) => {
             height={"80%"}
             w={show ? "110px" : "70px"}
             aspectRatio={1}
-            position={"absolute"}
+            pos={"absolute"}
             left={0}
             top={"10%"}
             transform={"translateX(10%)"}
