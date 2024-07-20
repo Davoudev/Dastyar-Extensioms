@@ -70,8 +70,8 @@ const SuggestionTools = () => {
         justifyContent={"space-between"}
         alignItems={"center"}
       >
-        <Flex alignItems={"center"} fontSize={20}>
-          <Text color={"#FFFFFF"}>ترندهای روز </Text>
+        <Flex alignItems={"center"} fontSize={20} color={"#FFFFFF"}>
+          <Text>ترندهای روز </Text>
           <IoMdTrendingUp />
         </Flex>
         <Box

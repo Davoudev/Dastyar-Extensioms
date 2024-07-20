@@ -118,3 +118,14 @@ button:focus-visible {
   opacity: 0 !important;
   z-index: 0 !important;
 }
+
+/* CheckBox styles  */
+.chakra-checkbox__control {
+  border-radius: 5px !important ;
+}
+.completed {
+  opacity: 0.2;
+}
+.completed label {
+  text-decoration-line: line-through;
+}

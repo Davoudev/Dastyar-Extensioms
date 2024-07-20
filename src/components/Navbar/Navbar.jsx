@@ -48,14 +48,14 @@ const Navbar = () => {
               justifyContent={"center"}
               alignItems={"center"}
             >
-              <Box
+              {/* <Box
                 width={4}
                 height={4}
                 borderRadius={"50%"}
                 position={"absolute"}
                 bg={"black"}
                 m={"auto"}
-              ></Box>
+              ></Box> */}
               <IoCloudDoneSharp />
             </Flex>
           </Tooltip>

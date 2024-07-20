@@ -15,11 +15,31 @@ const TodoList = () => {
     ]);
   };
 
+  const toggleComplete = (id) => {
+    console.log("hello");
+    setTodos(
+      todos.map((todo) =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    );
+  };
+
+  const deleteTodo = (id) => {
+    setTodos(todos.filter((todo) => todo.id !== id));
+  };
+
   return (
     <GridItem colSpan={3} rowSpan={14} bg={"#13151C"} borderRadius={25}>
       <TodoForm addTodo={addTodo}>
         {todos.map((todo, index) => {
-          return <Todo task={todo.task} key={index} />;
+          return (
+            <Todo
+              task={todo}
+              key={index}
+              toggleComplete={toggleComplete}
+              deleteTodo={deleteTodo}
+            />
+          );
         })}
       </TodoForm>
     </GridItem>

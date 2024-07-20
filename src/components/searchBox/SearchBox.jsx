@@ -10,7 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { SlMagnifier } from "react-icons/sl";
 import { FcGoogle } from "react-icons/fc";
-import { AiOutlineEnter } from "react-icons/ai";
+import { PiArrowElbowDownLeftBold } from "react-icons/pi";
 import React from "react";
 
 const SearchBox = ({ setShow, show }) => {
@@ -53,7 +53,7 @@ const SearchBox = ({ setShow, show }) => {
                   borderRadius={7}
                   fontSize={14}
                 >
-                  <AiOutlineEnter />
+                  <PiArrowElbowDownLeftBold />
                 </Box>
                 <Text>جستجو</Text>
               </Flex>
