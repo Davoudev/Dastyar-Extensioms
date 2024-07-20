@@ -29,3 +29,4 @@ const Todo = ({ task }) => {
 };
 
 export default Todo;
+// usage colorScheme we can add any color to checkbox

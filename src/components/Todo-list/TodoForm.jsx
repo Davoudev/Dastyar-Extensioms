@@ -30,11 +30,20 @@ const Todo = (props) => {
       >
         {/*  */}
         <Flex justifyContent={"space-between"} paddingX={4}>
-          <Button fontSize={22} borderRadius={10} padding={0} margin={0}>
+          <Button
+            fontSize={22}
+            borderRadius={10}
+            padding={0}
+            margin={0}
+            color={"#E8ECFD"}
+            bg={"#1C1F2B"}
+          >
             <IoMdEyeOff />
             <Text display={"none"}>مخفی کن</Text>
           </Button>
-          <FormLabel fontSize={26}>دست نویس</FormLabel>
+          <FormLabel fontSize={26} color={"#E8ECFD"}>
+            دست نویس
+          </FormLabel>
         </Flex>
         {/*  */}
         <Box w={"100%"} bg={"#eef0f512"} h={0.1} my={4}></Box>
@@ -47,13 +56,14 @@ const Todo = (props) => {
           justifyContent={"center"}
         >
           <InputGroup>
-            <InputLeftElement h={"100%"} p={0} ml={1}>
-              <button>
+            <InputLeftElement h={"100%"} p={0} ml={1} color="#A4A5A8">
+              <button color="#A4A5A8">
                 <LuPlus />
               </button>
             </InputLeftElement>
             <Input
               type="text"
+              borderColor={"#414451"}
               dir="rtl"
               value={value}
               pr={4}

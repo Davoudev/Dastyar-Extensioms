@@ -31,7 +31,7 @@ export default function DateTime({
         {toPersianDigit(moment().format("HH:mm"))}
       </Heading>
 
-      <Text my={3} fontWeight="bold" fontSize={19}>
+      <Text my={3} fontWeight="bold" fontSize={19} color={"#E8ECFD"}>
         {toPersianDigit(moment().locale("fa").format("dddd، DD MMMM"))}
       </Text>
 

@@ -20,7 +20,7 @@ const SuggestionTools = () => {
       borderRadius={25}
       pt={4}
     >
-      <Heading as={"h3"} size={"md"} dir="rtl" px={6}>
+      <Heading as={"h3"} size={"md"} dir="rtl" px={6} color={"#FFFFFF"}>
         ابزار پیشنهادی
       </Heading>
       <Flex
@@ -51,7 +51,9 @@ const SuggestionTools = () => {
                 fit={"cover"}
               />
             </Box>
-            <Text fontSize={"lg"}>{item.name}</Text>
+            <Text fontSize={"lg"} color={"#FFFFFF"}>
+              {item.name}
+            </Text>
             <Text fontSize={"xs"} color={"#979587 "}>
               {item.usage}
             </Text>
@@ -69,7 +71,7 @@ const SuggestionTools = () => {
         alignItems={"center"}
       >
         <Flex alignItems={"center"} fontSize={20}>
-          <Text>ترندهای روز </Text>
+          <Text color={"#FFFFFF"}>ترندهای روز </Text>
           <IoMdTrendingUp />
         </Flex>
         <Box

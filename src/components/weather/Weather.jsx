@@ -42,7 +42,7 @@ const Weather = ({ pishbiniClickHandler, pishbini }) => {
       <Heading mx={"auto"}>
         <Flex>
           <Box>🌱</Box>
-          <Box>{Math.floor(temp.temp)}°</Box>
+          <Box color={"#E8ECFD"}>{Math.floor(temp.temp)}°</Box>
         </Flex>
       </Heading>
 
@@ -50,7 +50,7 @@ const Weather = ({ pishbiniClickHandler, pishbini }) => {
         <Text fontSize={19} fontWeight={"bold"}>
           🍓
         </Text>
-        <Text fontSize={19} fontWeight={"bold"}>
+        <Text fontSize={19} fontWeight={"bold"} color={"#E8ECFD"}>
           جهنمه
         </Text>
       </Flex>

@@ -54,7 +54,6 @@ const Navbar = () => {
                 borderRadius={"50%"}
                 position={"absolute"}
                 bg={"black"}
-                zIndex={-1}
                 m={"auto"}
               ></Box>
               <IoCloudDoneSharp />

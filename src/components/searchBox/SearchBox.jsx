@@ -44,6 +44,7 @@ const SearchBox = ({ setShow, show }) => {
                 justifyContent={"space-between"}
                 alignItems={"center"}
                 gap={2}
+                color={"#FFFFFF"}
               >
                 <Box
                   bg={"#5C6DA1"}
@@ -57,7 +58,9 @@ const SearchBox = ({ setShow, show }) => {
                 <Text>جستجو</Text>
               </Flex>
             ) : (
-              <SlMagnifier />
+              <Flex color={"#FFFFFF"}>
+                <SlMagnifier />
+              </Flex>
             )}
           </InputLeftElement>
           <Input
