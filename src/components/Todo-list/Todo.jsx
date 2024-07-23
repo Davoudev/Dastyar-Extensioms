@@ -1,10 +1,12 @@
 import {
+  Badge,
   Box,
   Button,
   Checkbox,
   Flex,
   Text,
   useBoolean,
+  useToast,
 } from "@chakra-ui/react";
 import { FaRegTrashAlt } from "react-icons/fa";
 import { FaPen } from "react-icons/fa6";
@@ -12,8 +14,9 @@ import { PiArrowElbowDownLeftBold } from "react-icons/pi";
 
 import React from "react";
 
-const Todo = ({ task, toggleComplete, deleteTodo }) => {
+const Todo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
   const [showDelete, setShowDelete] = useBoolean();
+  const toast = useToast();
 
   return (
     <Flex
@@ -79,6 +82,7 @@ const Todo = ({ task, toggleComplete, deleteTodo }) => {
           py={2}
           border={"none"}
           _hover={{ bg: "#333740" }}
+          onClick={() => editTodo(task.id, task.todo)}
         >
           <Flex gap={2} align={"center"}>
             <Text
@@ -102,7 +106,43 @@ const Todo = ({ task, toggleComplete, deleteTodo }) => {
           py={2}
           border={"none"}
           _hover={{ bg: "#42282D" }}
-          onClick={() => deleteTodo(task.id)}
+          onClick={() => {
+            deleteTodo(task.id);
+            toast({
+              position: "bottom",
+              duration: 4000,
+              isClosable: false,
+
+              render: () => (
+                <Flex
+                  color="#FFFFFF"
+                  p={4}
+                  bg="#2B2F3D"
+                  mb={10}
+                  borderRadius={10}
+                  justify={"space-between"}
+                  w={"400px"}
+                >
+                  <Flex gap={2} align={"center"}>
+                    <Badge
+                      variant="subtle"
+                      fontSize={10}
+                      my={"auto"}
+                      opacity={0.5}
+                      p={1}
+                      // color={"#747785"}
+                    >
+                      CTRL + z
+                    </Badge>
+                    <Text color={"#D4D8E9"}>برگرداندن</Text>
+                  </Flex>
+                  <Text color={"#FFFFFF"} fontSize={22} fontWeight={"bold"}>
+                    ! دست نویس حذف شد
+                  </Text>
+                </Flex>
+              ),
+            });
+          }}
         >
           <Flex gap={2} align={"center"}>
             <Box

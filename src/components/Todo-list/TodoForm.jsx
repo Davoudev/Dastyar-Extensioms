@@ -8,12 +8,16 @@ import {
   InputLeftElement,
   Text,
 } from "@chakra-ui/react";
+import React, { useContext, useState } from "react";
 import { IoMdEyeOff } from "react-icons/io";
 import { LuPlus } from "react-icons/lu";
-import React, { useState } from "react";
+import { AiOutlineCheck } from "react-icons/ai";
+// import EditContext from "../../context/edit-context";
 
 const Todo = (props) => {
   const [value, setValue] = useState("");
+  // const editcontext = useContext(EditContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     props.addTodo(value);
@@ -27,6 +31,8 @@ const Todo = (props) => {
         w={"100%"}
         direction={"column"}
         justifyContent={"center"}
+        // filter={"auto"}
+        // blur={"3px"}
       >
         {/*  */}
         <Flex justifyContent={"space-between"} paddingX={4}>
@@ -57,9 +63,22 @@ const Todo = (props) => {
         >
           <InputGroup>
             <InputLeftElement h={"100%"} p={0} ml={1} color="#A4A5A8">
+              {/* {editcontext.editField ? */}
               <button color="#A4A5A8">
                 <LuPlus />
               </button>
+              {/* : (
+                <Button
+                  bg={"#276EF7"}
+                  w={"100%"}
+                  p={0}
+                  border={0}
+                  outline={"none"}
+                >
+                  <AiOutlineCheck />
+                </Button>
+              ) */}
+              {/* } */}
             </InputLeftElement>
             <Input
               type="text"
@@ -67,6 +86,7 @@ const Todo = (props) => {
               dir="rtl"
               value={value}
               pr={4}
+              color={"#FFFFFF"}
               onChange={(e) => setValue(e.target.value)}
               paddingY={6}
               _focus={{ outline: "none", border: "none" }}
@@ -85,12 +105,3 @@ const Todo = (props) => {
 };
 
 export default Todo;
-
-{
-  /* <UnorderedList>
-  <ListItem>Lorem ipsum dolor sit amet</ListItem>
-  <ListItem>Consectetur adipiscing elit</ListItem>
-  <ListItem>Integer molestie lorem at massa</ListItem>
-  <ListItem>Facilisis in pretium nisl aliquet</ListItem>
-</UnorderedList> */
-}

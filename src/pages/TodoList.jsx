@@ -1,12 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import TodoForm from "../components/Todo-list/TodoForm";
 import { Box, GridItem, Text } from "@chakra-ui/react";
 import { v4 as uuidv4 } from "uuid";
 import Todo from "../components/Todo-list/Todo";
+// import EditContext from "../context/edit-context";
 uuidv4();
 
 const TodoList = () => {
-  const [todos, setTodos] = useState([]);
+  const getStoredTodos = () => {
+    const json = JSON.parse(localStorage.getItem("todos"));
+    if (json) {
+      return json;
+    }
+
+    return [];
+  };
+  const [todos, setTodos] = useState(getStoredTodos());
+
+  useEffect(() => {
+    localStorage.setItem("todos", JSON.stringify(todos));
+  }, [todos]);
 
   const addTodo = (todo) => {
     setTodos([
@@ -16,7 +29,6 @@ const TodoList = () => {
   };
 
   const toggleComplete = (id) => {
-    console.log("hello");
     setTodos(
       todos.map((todo) =>
         todo.id === id ? { ...todo, completed: !todo.completed } : todo
@@ -28,8 +40,23 @@ const TodoList = () => {
     setTodos(todos.filter((todo) => todo.id !== id));
   };
 
+  // const editTodo = (id, text) => {
+  //   setTodos(
+  //     todos.map((todo) =>
+  //       todo.id === id ? { ...todo, isEditing: !todo.isEditing } : todo
+  //     )
+  //   );
+  // };
+
   return (
     <GridItem colSpan={3} rowSpan={14} bg={"#13151C"} borderRadius={25}>
+      {/* <EditContext.Provider
+        value={{
+          editField: todos.map((item) => {
+            return item[item.isEditing] === true;
+          }),
+        }}
+      > */}
       <TodoForm addTodo={addTodo}>
         {todos.map((todo, index) => {
           return (
@@ -38,13 +65,14 @@ const TodoList = () => {
               key={index}
               toggleComplete={toggleComplete}
               deleteTodo={deleteTodo}
+              // editTodo={editTodo}
             />
           );
         })}
       </TodoForm>
+      {/* </EditContext.Provider> */}
     </GridItem>
   );
 };
 
 export default TodoList;
-// console.log(todos);
