@@ -47,6 +47,7 @@ const Todo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
           colorScheme="gray"
           flexDirection={"row-reverse"}
           gap={4}
+          color={"#FFFFFF"}
           onChange={() => toggleComplete(task.id)}
         >
           {task.task}
