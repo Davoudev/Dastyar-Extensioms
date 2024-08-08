@@ -14,12 +14,12 @@ const Search = () => {
     setShow.toggle();
   };
   return (
-    <GridItem colSpan={6} rowSpan={show ? 8 : 6} w={"100%"} h={"100%"}>
-      <Grid templateRows="repeat(3, 1fr)" gap={2} w={"100%"} h={"100%"}>
+    <GridItem w={"100%"} area={"search"} mx={"auto"}>
+      <Grid gap={2} w={"100%"} h={"100%"}>
         <SearchBox setShow={showHandler} show={show} />
-        {show ? <SuggestionTools /> : <BookMark />}
-        <BackDrop show={show} toggle={toggleHandler} />
+        {show ? <SuggestionTools /> : null}
       </Grid>
+      <BackDrop show={show} toggle={toggleHandler} />
     </GridItem>
   );
 };

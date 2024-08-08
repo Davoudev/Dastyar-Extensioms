@@ -29,9 +29,11 @@ a:hover {
 
 body {
   margin: 0;
+  margin-inline: 7px !important;
   display: flex;
+  overflow-x: hidden;
   place-items: center;
-  min-width: 320px;
+  /* min-width: 320px; */
   min-height: 100vh;
   font-family: Vazirmatn, sans-serif;
 }
@@ -128,4 +130,7 @@ button:focus-visible {
 }
 .completed label {
   text-decoration-line: line-through;
+}
+.chakra-checkbox__label {
+  /* font-size: 0.8rem !important; */
 }

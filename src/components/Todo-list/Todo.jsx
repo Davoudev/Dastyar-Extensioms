@@ -20,12 +20,12 @@ const Todo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
 
   return (
     <Flex
-      mx={4}
+      mx={2}
       mb={3}
       borderRadius={14}
       border={"1px solid"}
       borderColor={"gray.600"}
-      p={3}
+      p={2}
       bg={"#eef0f512"}
       flexDir={"column"}
       gap={4}
@@ -39,11 +39,11 @@ const Todo = ({ task, toggleComplete, deleteTodo, editTodo }) => {
       <Flex
         direction={"row-reverse"}
         justifyContent={"space-between"}
-        align={"center"}
+        alignItems={"center"}
         w={"100%"}
       >
         <Checkbox
-          size="lg"
+          size="md"
           colorScheme="gray"
           flexDirection={"row-reverse"}
           gap={4}

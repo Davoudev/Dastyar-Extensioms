@@ -8,9 +8,11 @@ const DastyarEvent = ({ local, global, holiday, show }) => {
 
   return (
     <Flex
+      // width={"100%"}
       alignContent={"space-between"}
       justifyContent={"space-around"}
       display={show ? "flex" : "none"}
+      w={32}
     >
       <video loop autoPlay __idm_id__="1466369">
         <source

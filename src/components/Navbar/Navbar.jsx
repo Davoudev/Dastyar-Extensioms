@@ -2,21 +2,19 @@ import { IoCloudDoneSharp } from "react-icons/io5";
 import { BsFillPersonFill } from "react-icons/bs";
 import { RiSettings3Fill } from "react-icons/ri";
 import { Tooltip } from "@chakra-ui/react";
-
 import React from "react";
-import { Box, Flex, GridItem, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 
 const Navbar = () => {
   return (
-    <GridItem colSpan={12} rowSpan={1}>
+    <Box>
       <Flex
         justifyContent={"space-between"}
         alignItems={"center"}
         my={4}
-        mx={"auto"}
-        maxW={"1400px"}
+        mx={2}
       >
-        <Flex gap={4} fontSize={40} color={"gray.400"}>
+        <Flex gap={2} fontSize={28} color={"gray.400"}>
           <Box
             padding={1}
             borderRadius={"80%"}
@@ -35,11 +33,11 @@ const Navbar = () => {
           </Box>
           <Tooltip
             label="همگام سازی موفق"
-            fontSize={"sm"}
-            bg={"#fff"}
+            fontSize={"8px"}
+            bg={"rgba(0,0,0,0.4)"}
             borderRadius={"10px"}
             padding={2}
-            color="rgba(0,0,0,0.4)"
+            color="#fff"
           >
             <Flex
               padding={1}
@@ -60,10 +58,10 @@ const Navbar = () => {
             </Flex>
           </Tooltip>
         </Flex>
-        <Flex gap={4} alignItems={"center"}>
+        <Flex gap={2} alignItems={"center"}>
           <Text
-            color={"blue.300"}
-            fontSize={30}
+            color={"#559EFF"}
+            fontSize={20}
             fontWeight={"bold"}
             cursor={"pointer"}
           >
@@ -72,14 +70,14 @@ const Navbar = () => {
           <Box
             bg={"blue.500"}
             borderRadius={8}
-            width={10}
-            height={10}
+            width={7}
+            height={7}
             mx={"auto"}
             textAlign={"center"}
           >
             <svg
-              width="40"
-              height="40"
+              width="27"
+              height="27"
               viewBox="0 0 30 30"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -98,7 +96,7 @@ const Navbar = () => {
           </Box>
         </Flex>
       </Flex>
-    </GridItem>
+    </Box>
   );
 };
 

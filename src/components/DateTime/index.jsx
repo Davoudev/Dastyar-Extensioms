@@ -22,7 +22,7 @@ export default function DateTime({
       justifyContent="space-around"
     >
       <Heading
-        as="h4"
+        as="h5"
         w="full"
         color="blue.500"
         fontWeight="bold"
@@ -31,7 +31,7 @@ export default function DateTime({
         {toPersianDigit(moment().format("HH:mm"))}
       </Heading>
 
-      <Text my={3} fontWeight="bold" fontSize={19} color={"#E8ECFD"}>
+      <Text my={3} fontWeight="bold" fontSize={14} color={"#E8ECFD"}>
         {toPersianDigit(moment().locale("fa").format("dddd، DD MMMM"))}
       </Text>
 
@@ -41,22 +41,24 @@ export default function DateTime({
         alignItems="center"
         justifyContent="space-between"
       >
-        <Text fontSize={12}>
+        <Text fontSize={10}>
           {toPersianDigit(moment().format("YYYY/MM/DD"))}
         </Text>
         <Divider orientation="vertical" h="50%" rounded="full" opacity={0.5} />
-        <Text fontSize={12}>
+        <Text fontSize={10}>
           {toPersianDigit(gregorianToHijri(new Date()))}
         </Text>
       </Flex>
-
+      {/* وسط بودن المان ها را به هم میریزد */}
       <Flex justifyContent="center" alignItems="center" gap={2}>
         <Button
           leftIcon={oghat ? <IoIosArrowUp /> : <IoIosArrowDown />}
           colorScheme="blue"
           variant="outline"
           rounded="full"
+          fontSize={10}
           size="xs"
+          px={1}
           border="1px solid #3D404D"
           _hover={{
             border: oghat ? "1px solid #747785" : "1px solid #3D404D",
@@ -74,6 +76,8 @@ export default function DateTime({
           variant="outline"
           rounded="full"
           size="xs"
+          px={1}
+          fontSize={10}
           border="1px solid #3D404D"
           _hover={{
             border: timer ? "1px solid #747785" : "1px solid #3D404D",

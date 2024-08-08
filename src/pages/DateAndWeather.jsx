@@ -79,12 +79,14 @@ const DateAndWeather = () => {
   };
   return (
     <GridItem
-      rowSpan={6}
-      colSpan={3}
+      // rowSpan={6}
+      // colSpan={3}
       w={"100%"}
       h={"100%"}
       bg={"rgb(19 ,21 ,28)"}
       borderRadius={25}
+      area={"time"}
+      zIndex={-1}
     >
       <Flex direction={"column"} h={"100%"} maxW={"100%"}>
         <Flex

@@ -49,7 +49,13 @@ const TodoList = () => {
   // };
 
   return (
-    <GridItem colSpan={3} rowSpan={14} bg={"#13151C"} borderRadius={25}>
+    <GridItem
+      // colSpan={3}
+      // rowSpan={14}
+      bg={"#13151C"}
+      borderRadius={25}
+      area={"todo"}
+    >
       {/* <EditContext.Provider
         value={{
           editField: todos.map((item) => {

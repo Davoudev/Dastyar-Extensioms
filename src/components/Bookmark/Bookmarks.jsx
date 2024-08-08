@@ -22,18 +22,18 @@ const BookMark = () => {
   const x = <BoxPlus icon={<PiDotsNineBold />} text={"دم دستی"} />;
 
   return (
-    <GridItem rowSpan={2}>
+    <GridItem area={"boxplus"} w={"100%"} flexWrap={"wrap"}>
       <Grid
-        templateColumns="repeat(6, 1fr)"
-        templateRows="repeat(2, 1fr)"
-        h="100%"
+        // templateColumns="repeat(6, 1fr)"
+        templateColumns="repeat(2, 1fr)"
         w={"100%"}
+        flexWrap={"wrap"}
         gap={4}
-        textAlign={"right"}
+        // textAlign={"right"}
       >
-        {boxPlusComponents.slice(0, 5)}
         {x}
-        {boxPlusComponents.slice(5, 11)}
+        {/* {boxPlusComponents.slice(0, 5)} */}
+        {boxPlusComponents.slice(0, 11)}
       </Grid>
     </GridItem>
   );

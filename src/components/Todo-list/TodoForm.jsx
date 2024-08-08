@@ -27,7 +27,7 @@ const Todo = (props) => {
     <form style={{ height: "100%" }} onSubmit={handleSubmit}>
       <Flex
         py={6}
-        h={"100%"}
+        h={"400px"}
         w={"100%"}
         direction={"column"}
         justifyContent={"center"}
@@ -37,7 +37,9 @@ const Todo = (props) => {
         {/*  */}
         <Flex justifyContent={"space-between"} paddingX={4}>
           <Button
-            fontSize={22}
+            fontSize={14}
+            minW={8}
+            height={"auto"}
             borderRadius={10}
             padding={0}
             margin={0}
@@ -47,7 +49,7 @@ const Todo = (props) => {
             <IoMdEyeOff />
             <Text display={"none"}>مخفی کن</Text>
           </Button>
-          <FormLabel fontSize={26} color={"#E8ECFD"}>
+          <FormLabel fontSize={18} color={"#E8ECFD"} fontWeight={"bold"}>
             دست نویس
           </FormLabel>
         </Flex>
@@ -88,13 +90,14 @@ const Todo = (props) => {
               pr={4}
               color={"#FFFFFF"}
               onChange={(e) => setValue(e.target.value)}
-              paddingY={6}
+              paddingY={2}
               _focus={{ outline: "none", border: "none" }}
               placeholder="نوشتن تسک جدید"
               _placeholder={{
                 textAlign: "right",
                 color: "#fff",
                 fontWeight: "700",
+                fontSize: "12px",
               }}
             />
           </InputGroup>

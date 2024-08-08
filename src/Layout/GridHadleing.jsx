@@ -4,13 +4,19 @@ import React from "react";
 const GridHadleing = (props) => {
   return (
     <Grid
-      templateColumns="repeat(12, 1fr)"
-      templateRows="repeat(16, 1fr)"
+      templateAreas={`"search search"
+                  "time time"
+                  "boxplus boxplus"
+                  "calender calender"
+                  "todo todo"`}
+      templateColumns="repeat(2, 1fr)"
+      templateRows={"0.25fr 1fr  1fr 1.1fr  1.1fr"}
       gap={3}
-      h={"100vh"}
-      w={"100vw"}
-      maxW={"1400px"}
-      mx={"auto"}
+      h={"100%"}
+      // mx={"auto"}
+      justifyContent={"center"}
+      alignItems={"center"}
+      w={"100%"}
     >
       {props.children}
     </Grid>
