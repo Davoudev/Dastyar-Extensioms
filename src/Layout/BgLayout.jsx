@@ -1,20 +1,20 @@
-import { Box } from "@chakra-ui/react";
+import { Box, Container } from "@chakra-ui/react";
 import React from "react";
 
 const BgLayout = (props) => {
   return (
-    <Box
+    <Container
       h={"100%"}
       w={"100%"}
       pos={"absolute"}
       top={0}
       left={0}
       bgColor={"#1F1F1F	"}
-      // maxW={"320px"}
+      maxW={"container.xl"}
       mx={"auto"}
     >
       {props.children}
-    </Box>
+    </Container>
   );
 };
 
