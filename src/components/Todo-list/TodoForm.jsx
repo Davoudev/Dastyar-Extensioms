@@ -24,10 +24,10 @@ const Todo = (props) => {
     setValue("");
   };
   return (
-    <form style={{ height: "100%" }} onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <Flex
         py={6}
-        h={"400px"}
+        h={{ base: "400px", xl: "700px" }}
         w={"100%"}
         direction={"column"}
         justifyContent={"center"}

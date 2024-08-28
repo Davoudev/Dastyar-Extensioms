@@ -86,13 +86,17 @@ const DateAndWeather = () => {
       bg={"rgb(19 ,21 ,28)"}
       borderRadius={25}
       area={"time"}
-      zIndex={-1}
+      // zIndex={-1}
     >
-      <Flex direction={"column"} h={"100%"} maxW={"100%"}>
+      <Flex
+        direction={{ base: "column", lg: "row", xl: "column" }}
+        h={"100%"}
+        maxW={"100%"}
+      >
         <Flex
           flex={1}
           direction={"row"}
-          borderBottom={"1px solid #eef0f512"}
+          borderBottom={{ base: "1px solid #eef0f512", lg: "none" }}
           maxW={"100%"}
           h={"50%"}
         >
@@ -107,7 +111,7 @@ const DateAndWeather = () => {
             oghat={showDown.oghatsharye}
           />
         </Flex>
-        <Flex flex={1} h={"50%"}>
+        <Flex flex={1} h={{ base: "50%", lg: "100%" }}>
           <DastyarEvent
             show={showDown.dastEvents}
             global={relation.text1}

@@ -24,8 +24,7 @@ const BookMark = () => {
   return (
     <GridItem area={"boxplus"} w={"100%"} flexWrap={"wrap"}>
       <Grid
-        // templateColumns="repeat(6, 1fr)"
-        templateColumns="repeat(2, 1fr)"
+        templateColumns={{ base: "repeat(2, 1fr)", lg: "repeat(6, 1fr)" }}
         w={"100%"}
         flexWrap={"wrap"}
         gap={4}

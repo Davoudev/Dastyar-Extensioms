@@ -6,9 +6,9 @@ const BgLayout = (props) => {
     <Container
       h={"100%"}
       w={"100%"}
-      pos={"absolute"}
-      top={0}
-      left={0}
+      // pos={"absolute"}
+      // top={0}
+      // left={0}
       bgColor={"#1F1F1F	"}
       maxW={"container.xl"}
       mx={"auto"}

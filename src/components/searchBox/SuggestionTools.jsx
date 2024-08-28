@@ -18,7 +18,7 @@ const SuggestionTools = () => {
       bg={"#13151C"}
       // maxW={"100%"}
       // minW={"100%"}
-      w={"calc(100% - 14px)"}
+      w={{ base: "calc(100% - 14px)", xl: "calc(100% - 700px)" }}
       zIndex={13}
       borderRadius={25}
       pos={"fixed"}

@@ -36,7 +36,7 @@ const Weather = ({ pishbiniClickHandler, pishbini }) => {
       paddingX={3}
       justifyContent={"space-around"}
       alignItems={"center"}
-      borderRight={"1px solid #eef0f512"}
+      borderRight={{ base: "1px solid #eef0f512", lg: "none" }}
       w={"50%"}
     >
       <Heading mx={"auto"}>
