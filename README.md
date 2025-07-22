@@ -1,90 +1,106 @@
-# Dastyar Extention Simulation
+# 🧠 Dastyar Extension (Simulation)
 
-The program that I developed here is a simulated example of the Dastia plugin, with most of the features of this plugin currently added to it. \
-I have done this using React and Chakra ui as a practice for me and I have also produced a portfolio 🔥 .\
-The main challenges I faced are:
-Implementation of Persian calendar, taking air temperature and arrangement of elements by means of chakra
+This project is a **simulated version** of the Dastyar browser extension — featuring most of the core functionalities intended for the real plugin. Built with **React** and **Chakra UI**, it serves both as a **practice project** and a **portfolio piece**. 🔥
 
-## Features
+Some of the main technical challenges tackled in this project included:
 
-#### TodoList component
+- Implementing a **Persian calendar**
+- Fetching and displaying **weather data**
+- Designing a **responsive layout** using Chakra UI
 
-- [x] adding todo
-- [x] deleting todo
-- [x] add localStorage
-- [ ] Add editing feture
-- [ ] adding blur
+---
 
-#### time & tempreture
+## 🚀 Features
 
-- [x] add clock
-- [x] add day
-- [x] add date
-- [x] add georgian and ghamari
-- [x] add ahvaz city temp
-- [x] add relation day
-- [ ] add timer
-- [ ] add oghat sharie
-- [ ] add weather forecast
+### ✅ To-Do List
 
-#### search
+- [x] Add tasks
+- [x] Delete tasks
+- [x] Save to localStorage
+- [ ] Edit tasks
+- [ ] Blur effect
 
-- [ ] add Scroll horizintal to suggested tools
-- [ ] Add functionality to input
-- [ ] add bookmarks
+### 🕒 Time & Weather
 
-#### calender
+- [x] Live clock
+- [x] Current day
+- [x] Full date display
+- [x] Gregorian & Hijri calendar support
+- [x] Weather in Ahvaz ☀️
+- [x] Daily occasions
+- [ ] Countdown timer
+- [ ] Islamic prayer times
+- [ ] Weather forecast
 
-- [x] change days , month , years
-- [ ] add holidays
+### 🔍 Search
 
-#
+- [ ] Horizontal scroll for tool suggestions
+- [ ] Input field functionality
+- [ ] Bookmark system
 
-## Screenshots
+### 📆 Calendar
 
-![Todo-list](./src/assets/Screenshot.png)
+- [x] Change day/month/year
+- [ ] Highlight holidays
 
-## Tech Stack
+---
 
-**Client:** React, chakra Ui, vite
+## 🖼️ Screenshot
 
-## Run Locally
+![Todo-list](./src/assets/Screenshot%20.png)
 
-Clone the project
+---
 
-```bash
-  git clone https://github.com/Davoudev/Dastyar-Extensioms.git
-```
+## 🛠️ Tech Stack
 
-Go to the project directory
+- **Frontend**: React , Typescript
+- **UI Library**: Chakra UI
+- **Build Tool**: Vite
 
-```bash
-  cd Dastyar-Extensioms
-```
+---
 
-Install dependencies
+## ▶️ Getting Started
 
-```bash
-  npm install
-```
-
-Start the server
+Clone the project:
 
 ```bash
-  npm run start
+git clone https://github.com/Davoudev/Dastyar-Extensioms.git
 ```
 
-## Contributing
+Navigate into the project folder:
 
-Contributions are always welcome!
+```bash
+cd Dastyar-Extensioms
+```
 
-text me to telegram for Contributing!
+Install dependencies:
 
-Please adhere to this project's `code of conduct`.
+```bash
+npm install
+```
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Start the development server:
 
-Currently, two official plugins are available:
+```bash
+npm run start
+```
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+## 🤝 Contributing
+
+Contributions are always welcome!  
+Feel free to message me on **Telegram** if you’d like to collaborate.
+
+Let’s keep things respectful and collaborative 🙂
+
+---
+
+## 📦 Notes
+
+This project uses a minimal setup with React + Vite and includes HMR and ESLint.
+
+Vite officially supports two React plugins:
+
+- [`@vitejs/plugin-react`](https://github.com/vitejs/vite-plugin-react): uses **Babel** for Fast Refresh
+- [`@vitejs/plugin-react-swc`](https://github.com/vitejs/vite-plugin-react-swc): uses **SWC**
